@@ -1,14 +1,18 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.blingyshs.openincursor</id>
-    <name>OpenInCursor</name>
+    <name>Open In Cursor</name>
     <vendor>bling-yshs</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.github.blingyshs.openincursor.OpenInCursorSettings"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.blingyshs.openincursor.OpenInCursorSettingsConfigurable"
+                id="com.github.blingyshs.openincursor.OpenInCursorSettingsConfigurable"
+                displayName="Open in Cursor"/>
     </extensions>
 
     <actions>

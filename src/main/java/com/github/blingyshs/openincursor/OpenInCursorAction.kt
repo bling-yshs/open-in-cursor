@@ -35,8 +35,9 @@ class OpenInCursorAction : AnAction() {
             val projectUrl = "cursor://file/$projectPath"
             Desktop.getDesktop().browse(URI(projectUrl))
 
-            // 3秒后打开选中的文件
-            CompletableFuture.delayedExecutor(3, TimeUnit.SECONDS)
+            // 使用配置的延迟时间
+            val settings = OpenInCursorSettings.getInstance()
+            CompletableFuture.delayedExecutor(settings.delaySeconds.toLong(), TimeUnit.SECONDS)
                 .execute {
                     try {
                         val fileUrl = "cursor://file/$filePath"
