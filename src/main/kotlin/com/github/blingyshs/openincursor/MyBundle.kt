@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template
+package com.github.blingyshs.openincursor
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
