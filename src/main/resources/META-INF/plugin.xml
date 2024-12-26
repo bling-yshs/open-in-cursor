@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.blingyshs.openincursor</id>
-    <name>open-in-cursor</name>
+    <name>OpenInCursor</name>
     <vendor>bling-yshs</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,10 +9,12 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.blingyshs.openincursor.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.blingyshs.openincursor.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="OpenInCursor" class="com.github.blingyshs.openincursor.OpenInCursorAction" text="Open In Cursor"
+                description="OpenInCursor">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

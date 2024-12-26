@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# open-in-cursor Changelog
+# Open In Cursor Changelog
 
 ## [Unreleased]
 ### Added
