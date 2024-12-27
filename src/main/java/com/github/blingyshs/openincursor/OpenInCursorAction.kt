@@ -3,14 +3,18 @@ package com.github.blingyshs.openincursor
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
+import com.intellij.openapi.ui.Messages
 import java.awt.Desktop
 import java.net.URI
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.TimeUnit
-import com.intellij.openapi.ui.Messages
 
 class OpenInCursorAction : AnAction() {
+
     override fun actionPerformed(e: AnActionEvent) {
+
+        log.info("触发了 Open In Cursor 插件")
+
         val project = e.project
         if (project == null) {
             Messages.showErrorDialog(
@@ -50,13 +54,17 @@ class OpenInCursorAction : AnAction() {
                         val lineNumber = editor?.caretModel?.logicalPosition?.line
                         // 打开文件
                         val fileUrl = "cursor://file/$filePath:${lineNumber?.plus(1) ?: 1}"
+                        System.out.println("打开文件: $fileUrl")
+                        log.info("打开文件: $fileUrl")
                         Desktop.getDesktop().browse(URI(fileUrl))
 
                     } catch (ex: Exception) {
+                        log.error("打开文件失败: " + ex.message)
                         System.err.println("打开文件失败: " + ex.message)
                     }
                 }
         } catch (ex: Exception) {
+            log.error("打开 Cursor 失败: " + ex.message)
             System.err.println("打开 Cursor 失败: " + ex.message)
         }
     }
