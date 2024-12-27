@@ -11,7 +11,6 @@ import com.intellij.openapi.ui.Messages
 
 class OpenInCursorAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
-        val virtualFile = e.getData(CommonDataKeys.VIRTUAL_FILE)
         val project = e.project
         if (project == null) {
             Messages.showErrorDialog(
@@ -20,6 +19,7 @@ class OpenInCursorAction : AnAction() {
             )
             return
         }
+        val virtualFile = e.getData(CommonDataKeys.VIRTUAL_FILE)
         if (virtualFile == null) {
             Messages.showErrorDialog(
                 "无法获取当前文件信息",
