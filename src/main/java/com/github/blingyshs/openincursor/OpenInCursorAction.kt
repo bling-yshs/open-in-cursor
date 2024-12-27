@@ -31,10 +31,11 @@ class OpenInCursorAction : AnAction() {
         val projectPath = project.basePath
         // 获取当前文件路径
         val filePath = virtualFile.path
+        val openInNewWindow = "?windowId=_blank"
 
         try {
             // 首先打开项目根目录
-            val projectUrl = "cursor://file/$projectPath"
+            val projectUrl = "cursor://file/$projectPath$openInNewWindow"
             Desktop.getDesktop().browse(URI(projectUrl))
 
             // 使用配置的延迟时间
@@ -50,6 +51,7 @@ class OpenInCursorAction : AnAction() {
                         // 打开文件
                         val fileUrl = "cursor://file/$filePath:${lineNumber?.plus(1) ?: 1}"
                         Desktop.getDesktop().browse(URI(fileUrl))
+
                     } catch (ex: Exception) {
                         System.err.println("打开文件失败: " + ex.message)
                     }
