@@ -27,7 +27,9 @@ class OpenInCursorAction : AnAction() {
             )
             return
         }
+        // 获取项目根目录
         val projectPath = project.basePath
+        // 获取当前文件路径
         val filePath = virtualFile.path
 
         try {
@@ -37,10 +39,16 @@ class OpenInCursorAction : AnAction() {
 
             // 使用配置的延迟时间
             val settings = OpenInCursorSettings.getInstance()
+            // 延迟打开文件
             CompletableFuture.delayedExecutor(settings.delaySeconds.toLong(), TimeUnit.SECONDS)
                 .execute {
                     try {
-                        val fileUrl = "cursor://file/$filePath"
+                        // 获取当前编辑器
+                        val editor = e.getData(CommonDataKeys.EDITOR)
+                        // 获取当前行号
+                        val lineNumber = editor?.caretModel?.logicalPosition?.line
+                        // 打开文件
+                        val fileUrl = "cursor://file/$filePath:${lineNumber?.plus(1) ?: 1}"
                         Desktop.getDesktop().browse(URI(fileUrl))
                     } catch (ex: Exception) {
                         System.err.println("打开文件失败: " + ex.message)
