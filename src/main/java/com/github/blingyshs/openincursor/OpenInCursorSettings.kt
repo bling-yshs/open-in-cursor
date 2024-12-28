@@ -9,6 +9,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 )
 class OpenInCursorSettings : PersistentStateComponent<OpenInCursorSettings> {
     var delaySeconds: Int = 3
+    var openInNewWindow: Boolean = true
 
     override fun getState(): OpenInCursorSettings = this
 

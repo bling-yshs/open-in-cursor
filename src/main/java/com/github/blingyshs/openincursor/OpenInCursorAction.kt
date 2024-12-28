@@ -35,7 +35,10 @@ class OpenInCursorAction : AnAction() {
         val projectPath = project.basePath
         // 获取当前文件路径
         val filePath = virtualFile.path
-        val openInNewWindow = "?windowId=_blank"
+        
+        // 使用设置中的配置
+        val settings = OpenInCursorSettings.getInstance()
+        val openInNewWindow = if (settings.openInNewWindow) "?windowId=_blank" else ""
 
         try {
             // 首先打开项目根目录
@@ -43,8 +46,6 @@ class OpenInCursorAction : AnAction() {
             Desktop.getDesktop().browse(URI(projectUrl))
 
             // 使用配置的延迟时间
-            val settings = OpenInCursorSettings.getInstance()
-            // 延迟打开文件
             CompletableFuture.delayedExecutor(settings.delaySeconds.toLong(), TimeUnit.SECONDS)
                 .execute {
                     try {
