@@ -3,5 +3,12 @@
 # Open In Cursor Changelog
 
 ## [Unreleased]
+
+## [0.0.1] - 2024-12-28
+
 ### Added
+
 - 第一次正式发布 Open In Cursor
+
+[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/bling-yshs/open-in-cursor/commits/v0.0.1
