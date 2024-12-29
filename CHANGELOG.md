@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.0.3] - 2024-12-29
+
 ### Build
 
 - 尝试支持更多的版本
@@ -24,6 +26,7 @@
 
 - 第一次正式发布 Open In Cursor
 
-[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/bling-yshs/open-in-cursor/commits/v0.0.1
