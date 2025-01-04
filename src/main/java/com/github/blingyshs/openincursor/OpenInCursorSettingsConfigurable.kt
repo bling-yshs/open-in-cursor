@@ -13,7 +13,7 @@ import javax.swing.BoxLayout
 class OpenInCursorSettingsConfigurable : Configurable {
     private var settingsComponent: OpenInCursorSettingsComponent? = null
 
-    override fun getDisplayName(): String = "Open in Cursor"
+    override fun getDisplayName(): String = "Open In Cursor"
 
     override fun createComponent(): JComponent {
         settingsComponent = OpenInCursorSettingsComponent()

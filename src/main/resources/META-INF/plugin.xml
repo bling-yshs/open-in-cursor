@@ -12,7 +12,7 @@
                 parentId="tools"
                 instance="com.github.blingyshs.openincursor.OpenInCursorSettingsConfigurable"
                 id="com.github.blingyshs.openincursor.OpenInCursorSettingsConfigurable"
-                displayName="Open in Cursor"/>
+                displayName="Open In Cursor"/>
     </extensions>
 
     <actions>
