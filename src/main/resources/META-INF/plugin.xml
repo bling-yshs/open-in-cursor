@@ -17,7 +17,7 @@
 
     <actions>
         <action id="OpenInCursor" class="com.github.blingyshs.openincursor.OpenInCursorAction" text="Open In Cursor"
-                description="OpenInCursor">
+                description="OpenInCursor" icon="com.github.blingyshs.openincursor.OpenInCursorIcons.OpenInCursorAction">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
