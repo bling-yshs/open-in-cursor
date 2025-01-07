@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- 为 Action 添加了一个默认图标
+
 ## [0.0.5] - 2024-12-29
 
 ### Build
