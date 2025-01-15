@@ -35,14 +35,14 @@ class OpenInCursorAction : AnAction() {
         val projectPath = project.basePath
         // 获取当前文件路径
         val filePath = virtualFile.path
-        
+
         // 使用设置中的配置
         val settings = OpenInCursorSettings.getInstance()
         val openInNewWindow = if (settings.openInNewWindow) "?windowId=_blank" else ""
 
         try {
-            // 首先打开项目根目录
-            val projectUrl = "cursor://file/$projectPath$openInNewWindow"
+            // 使用配置的 IDE 名称打开项目根目录
+            val projectUrl = "${settings.ideName}://file/$projectPath$openInNewWindow"
             Desktop.getDesktop().browse(URI(projectUrl))
 
             // 使用配置的延迟时间
@@ -54,7 +54,7 @@ class OpenInCursorAction : AnAction() {
                         // 获取当前行号
                         val lineNumber = editor?.caretModel?.logicalPosition?.line
                         // 打开文件
-                        val fileUrl = "cursor://file/$filePath:${lineNumber?.plus(1) ?: 1}"
+                        val fileUrl = "${settings.ideName}://file/$filePath:${lineNumber?.plus(1) ?: 1}"
                         System.out.println("打开文件: $fileUrl")
                         log.info("打开文件: $fileUrl")
                         Desktop.getDesktop().browse(URI(fileUrl))
