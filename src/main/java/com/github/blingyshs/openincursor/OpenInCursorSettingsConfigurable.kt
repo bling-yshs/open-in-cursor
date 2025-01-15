@@ -1,15 +1,10 @@
 package com.github.blingyshs.openincursor
 
+import com.intellij.icons.AllIcons
 import com.intellij.openapi.options.Configurable
-import javax.swing.JComponent
-import javax.swing.JPanel
-import javax.swing.JLabel
-import javax.swing.JSpinner
-import javax.swing.SpinnerNumberModel
+import com.intellij.ui.components.JBLabel
 import java.awt.FlowLayout
-import javax.swing.JCheckBox
-import javax.swing.BoxLayout
-import javax.swing.JTextField
+import javax.swing.*
 
 class OpenInCursorSettingsConfigurable : Configurable {
     private var settingsComponent: OpenInCursorSettingsComponent? = null
@@ -24,8 +19,8 @@ class OpenInCursorSettingsConfigurable : Configurable {
     override fun isModified(): Boolean {
         val settings = OpenInCursorSettings.getInstance()
         return settingsComponent!!.delaySeconds != settings.delaySeconds ||
-               settingsComponent!!.openInNewWindow != settings.openInNewWindow ||
-               settingsComponent!!.ideName != settings.ideName
+                settingsComponent!!.openInNewWindow != settings.openInNewWindow ||
+                settingsComponent!!.ideName != settings.ideName
     }
 
     override fun apply() {
@@ -55,17 +50,10 @@ class OpenInCursorSettingsComponent {
 
     init {
         panel.layout = FlowLayout(FlowLayout.LEFT)
-        
+
         // 创建一个垂直布局的面板
         val mainPanel = JPanel()
         mainPanel.layout = BoxLayout(mainPanel, BoxLayout.Y_AXIS)
-
-        // ide 名称设置
-        val ideNamePanel = JPanel(FlowLayout(FlowLayout.LEFT))
-        ideNamePanel.add(JLabel("IDE名称:"))
-        ideNameField = JTextField(10)
-        ideNamePanel.add(ideNameField)
-        mainPanel.add(ideNamePanel)
 
         // 延迟设置
         val delayPanel = JPanel(FlowLayout(FlowLayout.LEFT))
@@ -73,12 +61,25 @@ class OpenInCursorSettingsComponent {
         delaySpinner = JSpinner(SpinnerNumberModel(2, 1, 10, 1))
         delayPanel.add(delaySpinner)
         mainPanel.add(delayPanel)
-        
+
         // 新窗口选项
         val newWindowPanel = JPanel(FlowLayout(FlowLayout.LEFT))
         newWindowCheckBox = JCheckBox("在新窗口中打开当前项目")
         newWindowPanel.add(newWindowCheckBox)
         mainPanel.add(newWindowPanel)
+
+        // IDE协议名称设置
+        val ideNamePanel = JPanel(FlowLayout(FlowLayout.LEFT))
+        ideNamePanel.add(JLabel("IDE协议名称:"))
+        ideNameField = JTextField(10)
+        ideNamePanel.add(ideNameField)
+        // 添加带有提示的感叹号图标
+        val warningLabel = JBLabel(AllIcons.General.BalloonInformation)
+        warningLabel.toolTipText =
+            "你可以填写任何 VSCode Like 的 IDE 协议名称，如：windsurf，vscode。如果你不知道这个是什么，请不要修改它"
+        ideNamePanel.add(warningLabel)
+
+        mainPanel.add(ideNamePanel)
 
         panel.add(mainPanel)
     }
