@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- 支持自定义 VSCode Like 的 IDE 协议，例如 vscode，windsurf
+
 ## [0.0.6] - 2025-01-07
 
 ### Added
