@@ -17,6 +17,7 @@ class OpenInCursorAction : AnAction() {
 
         val project = e.project
         if (project == null) {
+            @Suppress("DialogTitleCapitalization")
             Messages.showErrorDialog(
                 "无法获取当前项目信息",
                 "错误"
@@ -25,6 +26,7 @@ class OpenInCursorAction : AnAction() {
         }
         val virtualFile = e.getData(CommonDataKeys.VIRTUAL_FILE)
         if (virtualFile == null) {
+            @Suppress("DialogTitleCapitalization")
             Messages.showErrorDialog(
                 "无法获取当前文件信息",
                 "错误"
