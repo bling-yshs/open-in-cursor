@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- 修复非 windows 系统无法使用的问题
+
 ## [0.0.7] - 2025-01-26
 
 ### Added

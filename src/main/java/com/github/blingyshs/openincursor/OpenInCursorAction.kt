@@ -41,8 +41,13 @@ class OpenInCursorAction : AnAction() {
         val openInNewWindow = if (settings.openInNewWindow) "?windowId=_blank" else ""
 
         try {
+            // 判断操作系统类型
+            val isWindows = System.getProperty("os.name").lowercase().contains("windows")
+            // Windows 系统需要在 file 后添加 /，其他系统不需要
+            val filePrefix = if (isWindows) "file/" else "file"
+            
             // 使用配置的 IDE 名称打开项目根目录
-            val projectUrl = "${settings.ideName}://file/$projectPath$openInNewWindow"
+            val projectUrl = "${settings.ideName}://$filePrefix$projectPath$openInNewWindow"
             Desktop.getDesktop().browse(URI(projectUrl))
 
             // 使用配置的延迟时间
@@ -54,7 +59,7 @@ class OpenInCursorAction : AnAction() {
                         // 获取当前行号
                         val lineNumber = editor?.caretModel?.logicalPosition?.line
                         // 打开文件
-                        val fileUrl = "${settings.ideName}://file/$filePath:${lineNumber?.plus(1) ?: 1}"
+                        val fileUrl = "${settings.ideName}://$filePrefix$filePath:${lineNumber?.plus(1) ?: 1}"
                         System.out.println("打开文件: $fileUrl")
                         log.info("打开文件: $fileUrl")
                         Desktop.getDesktop().browse(URI(fileUrl))
