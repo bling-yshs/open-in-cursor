@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.0.7] - 2025-01-26
+
 ### Added
 
 - 支持自定义 VSCode Like 的 IDE 协议，例如 vscode，windsurf
@@ -48,7 +50,8 @@
 
 - 第一次正式发布 Open In Cursor
 
-[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.6...HEAD
+[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.3...v0.0.4
