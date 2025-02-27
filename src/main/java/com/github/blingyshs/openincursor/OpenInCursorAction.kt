@@ -45,7 +45,7 @@ class OpenInCursorAction : AnAction() {
             val isWindows = System.getProperty("os.name").lowercase().contains("windows")
             // Windows 系统需要在 file 后添加 /，其他系统不需要
             val filePrefix = if (isWindows) "file/" else "file"
-            
+
             // 使用配置的 IDE 名称打开项目根目录
             val projectUrl = "${settings.ideName}://$filePrefix$projectPath$openInNewWindow"
             Desktop.getDesktop().browse(URI(projectUrl))
@@ -60,18 +60,15 @@ class OpenInCursorAction : AnAction() {
                         val lineNumber = editor?.caretModel?.logicalPosition?.line
                         // 打开文件
                         val fileUrl = "${settings.ideName}://$filePrefix$filePath:${lineNumber?.plus(1) ?: 1}"
-                        System.out.println("打开文件: $fileUrl")
                         log.info("打开文件: $fileUrl")
                         Desktop.getDesktop().browse(URI(fileUrl))
 
                     } catch (ex: Exception) {
                         log.error("打开文件失败: " + ex.message)
-                        System.err.println("打开文件失败: " + ex.message)
                     }
                 }
         } catch (ex: Exception) {
             log.error("打开 Cursor 失败: " + ex.message)
-            System.err.println("打开 Cursor 失败: " + ex.message)
         }
     }
 }
