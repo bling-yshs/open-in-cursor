@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.0.8] - 2025-02-28
+
 ### Fixed
 
 - 修复非 windows 系统无法使用的问题
@@ -54,7 +56,8 @@
 
 - 第一次正式发布 Open In Cursor
 
-[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.4...v0.0.5
