@@ -4,12 +4,12 @@
 
 ## [Unreleased]
 
+## [0.0.91] - 2025-10-03
+
 ### Notification
 
 - 此插件不再维护，请使用 [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) 插件来替代，这个插件做个更好响应更快
-
 - This plugin is no longer maintained; please use the [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) plugin as a replacement; this plugin works better and responds faster.
-
 
 ## [0.0.9] - 2025-03-03
 
@@ -69,7 +69,8 @@
 
 - 第一次正式发布 Open In Cursor
 
-[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.9...HEAD
+[Unreleased]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.91...HEAD
+[0.0.91]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.9...v0.0.91
 [0.0.9]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/bling-yshs/open-in-cursor/compare/v0.0.6...v0.0.7
