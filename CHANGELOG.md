@@ -6,9 +6,9 @@
 
 ### Notification
 
-此插件不再维护，请使用 [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) 插件来替代，这个插件做个更好响应更快
+- 此插件不再维护，请使用 [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) 插件来替代，这个插件做个更好响应更快
 
-This plugin is no longer maintained; please use the [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) plugin as a replacement; this plugin works better and responds faster.
+- This plugin is no longer maintained; please use the [editorjumper](https://plugins.jetbrains.com/plugin/26824-editorjumper) plugin as a replacement; this plugin works better and responds faster.
 
 
 ## [0.0.9] - 2025-03-03
