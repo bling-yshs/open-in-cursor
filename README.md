@@ -2,6 +2,10 @@
 
 <!-- Plugin description -->
 
+## 🚀 最新更新
+- 2025-10-14: 添加了测试分支功能验证
+- 支持在 feature/development 分支进行开发测试
+
 ### ENG
 
 Open the current project, and open the active file in Cursor after 3 seconds
