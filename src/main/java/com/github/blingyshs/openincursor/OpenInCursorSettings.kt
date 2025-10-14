@@ -10,6 +10,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 class OpenInCursorSettings : PersistentStateComponent<OpenInCursorSettings> {
     var delaySeconds: Int = 3
     var openInNewWindow: Boolean = true
+    var ideName: String = "cursor"
 
     override fun getState(): OpenInCursorSettings = this
 
@@ -20,4 +21,4 @@ class OpenInCursorSettings : PersistentStateComponent<OpenInCursorSettings> {
     companion object {
         fun getInstance(): OpenInCursorSettings = service()
     }
-} 
+}
