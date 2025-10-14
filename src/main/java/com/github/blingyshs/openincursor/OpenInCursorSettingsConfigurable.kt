@@ -55,7 +55,7 @@ class OpenInCursorSettingsComponent {
         val mainPanel = JPanel()
         mainPanel.layout = BoxLayout(mainPanel, BoxLayout.Y_AXIS)
         
-        // 第一行：延迟设置
+        // 第一行：延迟设置，防止程序加载慢
         val delayPanel = JPanel(FlowLayout(FlowLayout.LEFT))
         delayPanel.add(JLabel("打开文件延迟时间（秒）:"))
         delaySpinner = JSpinner(SpinnerNumberModel(2, 1, 10, 1))
