@@ -19,7 +19,7 @@ class OpenInCursorAction : AnAction() {
         if (project == null) {
             @Suppress("DialogTitleCapitalization")
             Messages.showErrorDialog(
-                "无法获取当前项目信息",
+                "无法111获取当前项目信息",
                 "错误"
             )
             return
