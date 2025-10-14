@@ -3,6 +3,7 @@
 <!-- Plugin description -->
 
 ## 🚀 最新更新
+- 20251014
 - 2025-10-14: 添加了测试分支功能验证
 - 支持在 feature/development 分支进行开发测试
 
