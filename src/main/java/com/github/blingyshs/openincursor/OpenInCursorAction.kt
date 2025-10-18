@@ -13,13 +13,13 @@ class OpenInCursorAction : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
 
-        log.info("触发了 Open In Cursor 插件")
+        log.info("触发了 Open111 In Cursor 插件")
 
         val project = e.project
         if (project == null) {
             @Suppress("DialogTitleCapitalization")
             Messages.showErrorDialog(
-                "无法获取当前项目信息",
+                "无法111获取当前项目信息",
                 "错误"
             )
             return
